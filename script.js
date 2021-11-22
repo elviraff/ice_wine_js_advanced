@@ -5,13 +5,12 @@ const goods = [
     { title: 'shoes', price: 250 },
 ];
 
-const RenderGoodsItem = (title, price) => {
-    return `<div class="goods-item"><h3>${title}</h3><p>${price}</p></div>`;
-};
+const RenderGoodsItem = (title, price) => `<div class="goods-item"><h3 class="card_header">${title}</h3><p class="card_text">${price}</p></div>`;
+;
 
 const RenderGoodsList = (list) => {
     let goodsList = list.map(item => RenderGoodsItem(item.title, item.price));
-    document.querySelector('.goods-list').innerHTML = goodsList;
+    document.querySelector('.goods-list').innerHTML = goodsList.join(' ');
 };
 
 RenderGoodsList(goods);
